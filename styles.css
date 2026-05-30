@@ -98,7 +98,8 @@ figure {
 
 .hero.has-hero-image::before {
   background-image:
-    linear-gradient(180deg, rgba(7, 87, 71, 0.28), rgba(84, 24, 39, 0.72)),
+    linear-gradient(180deg, rgba(7, 87, 71, 0.38), rgba(84, 24, 39, 0.78)),
+    radial-gradient(circle at 50% 32%, rgba(45, 34, 27, 0.1), rgba(45, 34, 27, 0.52)),
     var(--hero-image);
 }
 
@@ -140,12 +141,13 @@ h3 {
 
 h1 {
   margin-top: 18px;
-  font-size: clamp(3rem, 16vw, 6.8rem);
+  font-size: clamp(2.8rem, 13vw, 6.8rem);
   text-shadow: 0 8px 30px rgba(0, 0, 0, 0.24);
 }
 
 .hero__subtitle {
   width: min(100%, 560px);
+  max-width: 17rem;
   margin: 18px auto 0;
   color: rgba(255, 248, 235, 0.92);
   font-size: clamp(1.1rem, 4.6vw, 1.55rem);
@@ -176,6 +178,7 @@ h1 {
   text-align: center;
   text-decoration: none;
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  cursor: pointer;
 }
 
 .button:hover,
@@ -396,6 +399,15 @@ h1 {
   line-height: 1.45;
 }
 
+.location-card__coords,
+.direction-card__coords {
+  color: var(--emerald);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
 .section--directions {
   background:
     linear-gradient(180deg, rgba(7, 87, 71, 0.07), rgba(123, 32, 53, 0.05)),
@@ -423,6 +435,15 @@ h1 {
 .button-row .button--primary,
 .button-row .button--secondary {
   margin-top: 0;
+}
+
+.copy-status {
+  min-height: 1.25rem;
+  color: var(--emerald);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .image-slot {
@@ -561,6 +582,10 @@ h1 {
 
   .hero::after {
     inset: 28px;
+  }
+
+  .hero__subtitle {
+    max-width: 560px;
   }
 
   .section {

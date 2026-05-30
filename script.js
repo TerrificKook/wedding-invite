@@ -39,6 +39,41 @@
     }
   });
 
+  const coordinateButtons = document.querySelectorAll("[data-copy-coordinates]");
+
+  coordinateButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const coordinates = button.dataset.copyCoordinates;
+      const card = button.closest(".direction-card");
+      const status = card ? card.querySelector(".copy-status") : null;
+
+      function setStatus(message) {
+        if (status) {
+          status.textContent = message;
+        }
+      }
+
+      if (!coordinates) {
+        setStatus("Координаты указаны выше.");
+        return;
+      }
+
+      if (!navigator.clipboard || !navigator.clipboard.writeText) {
+        setStatus("Координаты указаны выше, их можно скопировать вручную.");
+        return;
+      }
+
+      navigator.clipboard
+        .writeText(coordinates)
+        .then(function () {
+          setStatus("Координаты скопированы.");
+        })
+        .catch(function () {
+          setStatus("Координаты указаны выше, их можно скопировать вручную.");
+        });
+    });
+  });
+
   const revealItems = document.querySelectorAll(".reveal");
 
   if (!("IntersectionObserver" in window)) {
