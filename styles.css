@@ -392,6 +392,14 @@ h1 {
   margin-bottom: 4px;
 }
 
+.location-card:first-child .venue-photo img {
+  object-position: 50% 24%;
+}
+
+.location-card:nth-child(2) .venue-photo img {
+  object-position: 50% 50%;
+}
+
 .location-card__time {
   width: max-content;
   padding: 4px 10px;
@@ -493,20 +501,72 @@ h1 {
 }
 
 .gallery {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 14px;
   max-width: 760px;
   margin: 0 auto;
+  padding: 14px 8px 20px;
+  isolation: isolate;
+}
+
+.gallery::before,
+.gallery::after {
+  position: absolute;
+  z-index: 0;
+  width: 86px;
+  height: 86px;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(circle at 24px 28px, rgba(239, 183, 190, 0.94) 0 7px, transparent 8px),
+    radial-gradient(circle at 37px 21px, rgba(255, 238, 226, 0.94) 0 8px, transparent 9px),
+    radial-gradient(circle at 47px 34px, rgba(123, 32, 53, 0.82) 0 6px, transparent 7px),
+    radial-gradient(circle at 32px 45px, rgba(200, 159, 74, 0.82) 0 4px, transparent 5px),
+    radial-gradient(ellipse at 59px 48px, rgba(7, 87, 71, 0.64) 0 12px, transparent 13px),
+    radial-gradient(ellipse at 55px 25px, rgba(7, 87, 71, 0.42) 0 10px, transparent 11px);
+  filter: drop-shadow(0 8px 14px rgba(84, 24, 39, 0.14));
+}
+
+.gallery::before {
+  top: -18px;
+  left: -12px;
+  transform: rotate(-18deg);
+}
+
+.gallery::after {
+  right: -12px;
+  bottom: -20px;
+  transform: rotate(162deg);
 }
 
 .gallery__item {
+  z-index: 1;
   aspect-ratio: 1 / 1;
   min-height: 0;
+  box-shadow: 0 16px 34px rgba(84, 24, 39, 0.12);
+  transition: transform 300ms ease, box-shadow 300ms ease;
 }
 
 .gallery__item:nth-child(3n) {
   aspect-ratio: 1 / 1;
+}
+
+.gallery__item:nth-child(1),
+.gallery__item:nth-child(4) {
+  transform: translateY(-5px);
+}
+
+.gallery__item:nth-child(2),
+.gallery__item:nth-child(3) {
+  transform: translateY(8px);
+}
+
+.gallery__item:nth-child(1),
+.gallery__item:nth-child(4) {
+  border-color: rgba(200, 159, 74, 0.64);
+  box-shadow: 0 18px 42px rgba(123, 32, 53, 0.16);
 }
 
 .image-slot.is-missing img {
