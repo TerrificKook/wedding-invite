@@ -44,7 +44,7 @@
   coordinateButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       const coordinates = button.dataset.copyCoordinates;
-      const card = button.closest(".direction-card");
+      const card = button.closest(".direction-card, .location-card");
       const status = card ? card.querySelector(".copy-status") : null;
 
       function setStatus(message) {
@@ -73,6 +73,24 @@
         });
     });
   });
+
+  const phoneButton = document.querySelector("[data-show-phone]");
+  const phonePanel = document.querySelector("[data-phone-panel]");
+  const phoneNumber = document.querySelector("[data-phone-number]");
+  const phoneLink = document.querySelector("[data-phone-link]");
+
+  if (phoneButton && phonePanel && phoneNumber && phoneLink) {
+    const visiblePhone = ["8 (905)", "701", "11", "77"].join(" ");
+    const callLink = "tel:" + ["+7", "905", "701", "11", "77"].join("");
+
+    phoneButton.addEventListener("click", function () {
+      phoneNumber.textContent = visiblePhone;
+      phoneLink.href = callLink;
+      phonePanel.hidden = false;
+      phoneButton.textContent = "Телефон показан";
+      phoneButton.setAttribute("aria-expanded", "true");
+    });
+  }
 
   const revealItems = document.querySelectorAll(".reveal");
 

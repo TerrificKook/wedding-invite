@@ -66,7 +66,7 @@
               </div>
             </li>
             <li class="timeline__item">
-              <time datetime="17:00">17:00</time>
+              <time datetime="18:00">18:00</time>
               <div>
                 <h3>Сбор гостей в ресторане “Град Южный”</h3>
               </div>
@@ -106,6 +106,15 @@
 
           <div class="location-grid">
             <article class="location-card framed">
+              <figure class="image-slot venue-photo">
+                <img
+                  class="optional-image"
+                  src="assets/images/safisa.jpg"
+                  alt="Фото Дома торжеств Сафиса"
+                  data-fallback="Фото площадки будет добавлено позже"
+                  loading="lazy"
+                >
+              </figure>
               <p class="location-card__time">15:00</p>
               <h3>Дом торжеств “Сафиса”</h3>
               <p class="location-card__address">Москва, Воробьёвское шоссе, 2Б</p>
@@ -115,19 +124,44 @@
                 росписи ограничено, поэтому присутствие там
                 согласуется отдельно.
               </p>
+              <a
+                class="button button--secondary location-card__button"
+                href="yandexnavi://build_route_on_map?lat_to=55.729306&lon_to=37.543740"
+                target="_blank"
+                rel="noopener"
+              >
+                Открыть в Яндекс.Навигаторе
+              </a>
             </article>
 
             <article class="location-card framed">
-              <p class="location-card__time">17:00</p>
+              <figure class="image-slot venue-photo">
+                <img
+                  class="optional-image"
+                  src="assets/images/grad-yuzhny.jpg"
+                  alt="Фото ресторана Град Южный"
+                  data-fallback="Фото площадки будет добавлено позже"
+                  loading="lazy"
+                >
+              </figure>
+              <p class="location-card__time">18:00</p>
               <h3>Ресторан “Град Южный”</h3>
               <p class="location-card__address">
-                Московская область, Красногорск, Заводская ул., 27
+                Московская область, Красногорск, ул. Заводская, 27
               </p>
               <p class="location-card__coords">55.809960, 37.323617</p>
               <p>
                 Здесь пройдёт основная праздничная часть вечера: ужин,
                 поздравления, живая музыка и общение.
               </p>
+              <a
+                class="button button--secondary location-card__button"
+                href="yandexnavi://build_route_on_map?lat_to=55.809960&lon_to=37.323617"
+                target="_blank"
+                rel="noopener"
+              >
+                Открыть в Яндекс.Навигаторе
+              </a>
             </article>
           </div>
         </div>
@@ -171,7 +205,7 @@
 
             <article class="direction-card">
               <h3>Ресторан “Град Южный”</h3>
-              <p>Московская область, Красногорск, Заводская ул., 27</p>
+              <p>Московская область, Красногорск, ул. Заводская, 27</p>
               <p class="direction-card__coords">Координаты: 55.809960, 37.323617</p>
               <div class="button-row">
                 <a
@@ -235,6 +269,15 @@
                 loading="lazy"
               >
             </figure>
+            <figure class="image-slot gallery__item">
+              <img
+                class="optional-image"
+                src="assets/images/photo-4.jpg"
+                alt="Фотография с Никаха Динара и Виктории 4"
+                data-fallback="Фото будет добавлено позже"
+                loading="lazy"
+              >
+            </figure>
           </div>
         </div>
       </section>
@@ -252,7 +295,7 @@
               Если возникнут вопросы по времени, месту или дороге, можно написать
               Динару.
             </p>
-            <div class="button-row button-row--center">
+            <div class="button-row button-row--center contact-actions">
               <a
                 class="button button--primary"
                 href="https://t.me/MrDinar"
@@ -261,8 +304,18 @@
               >
                 Написать в Telegram
               </a>
-              <a class="button button--secondary" href="MAX_LINK">MAX добавим позже</a>
-              <a class="button button--secondary" href="PHONE_LINK">Телефон</a>
+              <button
+                class="button button--secondary"
+                type="button"
+                data-show-phone
+                aria-expanded="false"
+              >
+                Показать телефон
+              </button>
+            </div>
+            <div class="phone-panel" data-phone-panel hidden>
+              <p class="phone-panel__number" data-phone-number aria-live="polite"></p>
+              <a class="button button--secondary" data-phone-link href="#">Позвонить</a>
             </div>
           </div>
         </div>
@@ -271,7 +324,11 @@
       <footer class="footer reveal">
         <div class="container">
           <span class="ornament ornament--small" aria-hidden="true"></span>
-          <p>
+          <p class="footer__help">
+            Если вам нужна помощь с дорогой, советом или ночёвкой - смело
+            пишите или звоните, постараемся помочь.
+          </p>
+          <p class="footer__signature">
             С любовью и уважением,<br>
             Динар и Виктория
           </p>
