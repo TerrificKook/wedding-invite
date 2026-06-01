@@ -29,7 +29,12 @@
       <section class="hero" id="top" data-hero-image="assets/images/hero.jpg">
         <div class="hero__content">
           <p class="eyebrow">Свадебное приглашение</p>
-          <h1>Динар & Виктория</h1>
+          <h1 class="hero__title">
+            <span>Динар</span>
+            <span class="hero__amp">&</span>
+            <span>Виктория</span>
+          </h1>
+          <span class="hero__flourish" aria-hidden="true"></span>
           <p class="hero__subtitle">Приглашаем разделить с нами радость этого дня</p>
           <p class="hero__date">11 июля 2026, суббота</p>
           <a class="button button--primary" href="#program">Смотреть программу</a>
@@ -120,15 +125,28 @@
 
           <div class="location-grid">
             <article class="location-card framed">
-              <figure class="image-slot venue-photo">
-                <img
-                  class="optional-image"
-                  src="assets/images/safisa.jpg"
-                  alt="Фото Дома торжеств Сафиса"
-                  data-fallback="Фото площадки будет добавлено позже"
-                  loading="lazy"
-                >
-              </figure>
+              <div class="venue-photo-grid">
+                <figure class="image-slot venue-photo venue-photo--main venue-photo--safisa-outside">
+                  <span class="venue-photo__label">Снаружи</span>
+                  <img
+                    class="optional-image"
+                    src="assets/images/safisa.jpg"
+                    alt="Дом торжеств Сафиса снаружи"
+                    data-fallback="Фото площадки будет добавлено позже"
+                    loading="lazy"
+                  >
+                </figure>
+                <figure class="image-slot venue-photo venue-photo--secondary venue-photo--safisa-inside">
+                  <span class="venue-photo__label">Внутри</span>
+                  <img
+                    class="optional-image"
+                    src="assets/images/safisa-inside.jpg"
+                    alt="Дом торжеств Сафиса внутри"
+                    data-fallback="Фото интерьера будет добавлено позже"
+                    loading="lazy"
+                  >
+                </figure>
+              </div>
               <p class="location-card__time">15:00</p>
               <h3>Дом торжеств “Сафиса”</h3>
               <p class="location-card__address">Москва, Воробьёвское шоссе, 2Б</p>
@@ -156,15 +174,28 @@
             </article>
 
             <article class="location-card framed">
-              <figure class="image-slot venue-photo">
-                <img
-                  class="optional-image"
-                  src="assets/images/grad-yuzhny.jpg"
-                  alt="Фото ресторана Град Южный"
-                  data-fallback="Фото площадки будет добавлено позже"
-                  loading="lazy"
-                >
-              </figure>
+              <div class="venue-photo-grid">
+                <figure class="image-slot venue-photo venue-photo--main venue-photo--grad-outside">
+                  <span class="venue-photo__label">Снаружи</span>
+                  <img
+                    class="optional-image"
+                    src="assets/images/grad-yuzhny-outside.webp"
+                    alt="Вход в ресторан Град Южный снаружи"
+                    data-fallback="Фото площадки будет добавлено позже"
+                    loading="lazy"
+                  >
+                </figure>
+                <figure class="image-slot venue-photo venue-photo--secondary venue-photo--grad-inside">
+                  <span class="venue-photo__label">Внутри</span>
+                  <img
+                    class="optional-image"
+                    src="assets/images/grad-yuzhny.jpg"
+                    alt="Ресторан Град Южный внутри"
+                    data-fallback="Фото интерьера будет добавлено позже"
+                    loading="lazy"
+                  >
+                </figure>
+              </div>
               <p class="location-card__time">17:00</p>
               <h3>Ресторан “Град Южный”</h3>
               <p class="location-card__address">
@@ -383,6 +414,14 @@
                 rel="noopener"
               >
                 Написать в Telegram
+              </a>
+              <a
+                class="button button--secondary"
+                href="https://max.ru/u/f9LHodD0cOLfW3__uYzVqO2787ZFK1DmkRXXl8UKjgzhJeDOOT2V1173QIc"
+                target="_blank"
+                rel="noopener"
+              >
+                Написать в MAX
               </a>
               <button
                 class="button button--secondary"
