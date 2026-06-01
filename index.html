@@ -11,8 +11,22 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-header__brand" href="#top" aria-label="В начало приглашения">
+          Динар & Виктория
+        </a>
+        <nav class="site-nav" aria-label="Быстрая навигация">
+          <a href="#program">Программа</a>
+          <a href="#locations">Адреса</a>
+          <a href="#directions">Маршрут</a>
+          <a href="#questions">Вопросы</a>
+        </nav>
+      </div>
+    </header>
+
     <main>
-      <section class="hero" data-hero-image="assets/images/hero.jpg">
+      <section class="hero" id="top" data-hero-image="assets/images/hero.jpg">
         <div class="hero__content">
           <p class="eyebrow">Свадебное приглашение</p>
           <h1>Динар & Виктория</h1>
@@ -124,6 +138,13 @@
                 росписи ограничено, поэтому присутствие там
                 согласуется отдельно.
               </p>
+              <details class="venue-details">
+                <summary>Подробнее о площадке</summary>
+                <p>
+                  “Сафиса” - торжественное здание на Воробьёвском шоссе. Здесь
+                  пройдёт официальная часть дня в спокойном семейном кругу.
+                </p>
+              </details>
               <a
                 class="button button--secondary location-card__button"
                 href="yandexnavi://build_route_on_map?lat_to=55.729306&lon_to=37.543740"
@@ -154,6 +175,14 @@
                 Здесь пройдёт основная праздничная часть вечера: ужин,
                 поздравления, живая музыка и общение.
               </p>
+              <details class="venue-details">
+                <summary>Подробнее о площадке</summary>
+                <p>
+                  “Град Южный” - ресторан в Красногорске, где состоится основная
+                  встреча гостей. Ориентируйтесь на адрес и маршрут в
+                  Яндекс.Навигаторе.
+                </p>
+              </details>
               <a
                 class="button button--secondary location-card__button"
                 href="yandexnavi://build_route_on_map?lat_to=55.809960&lon_to=37.323617"
@@ -245,7 +274,7 @@
             <figure class="image-slot gallery__item">
               <img
                 class="optional-image"
-                src="assets/images/photo-1.jpg"
+                src="assets/images/photo-4.jpg"
                 alt="Фотография с Никаха Динара и Виктории 1"
                 data-fallback="Фото будет добавлено позже"
                 loading="lazy"
@@ -272,12 +301,63 @@
             <figure class="image-slot gallery__item">
               <img
                 class="optional-image"
-                src="assets/images/photo-4.jpg"
+                src="assets/images/photo-1.jpg"
                 alt="Фотография с Никаха Динара и Виктории 4"
                 data-fallback="Фото будет добавлено позже"
                 loading="lazy"
               >
             </figure>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true">
+        <span class="ornament ornament--small"></span>
+      </div>
+
+      <section class="section section--questions reveal" id="questions">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Частые вопросы</p>
+            <h2>Коротко о важном</h2>
+          </div>
+
+          <div class="faq-grid">
+            <article class="faq-card">
+              <h3>Что делать, если опаздываем?</h3>
+              <p>
+                Приезжайте, когда вам будет удобно. Если нужно, напишите Динару,
+                чтобы мы понимали, когда вас ждать.
+              </p>
+            </article>
+            <article class="faq-card">
+              <h3>Нужно ли приезжать на роспись?</h3>
+              <p>
+                Мест на росписи немного, поэтому присутствие там согласуется
+                отдельно.
+              </p>
+            </article>
+            <article class="faq-card">
+              <h3>Куда ехать к основной части?</h3>
+              <p>
+                К 17:00 ждём гостей в ресторане “Град Южный”. Адрес и координаты
+                есть выше в блоке маршрута.
+              </p>
+            </article>
+            <article class="faq-card">
+              <h3>Если сложно найти дорогу?</h3>
+              <p>
+                Напишите или позвоните Динару. Поможем с маршрутом и подскажем,
+                как удобнее добраться.
+              </p>
+            </article>
+            <article class="faq-card faq-card--wide">
+              <h3>Будет ли встреча в воскресенье?</h3>
+              <p>
+                Для желающих возможен совместный завтрак или обед. Детали
+                напишем ближе к дате.
+              </p>
+            </article>
           </div>
         </div>
       </section>
