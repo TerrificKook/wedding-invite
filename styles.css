@@ -25,6 +25,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--ink);
   background:
     radial-gradient(circle at top left, rgba(232, 207, 146, 0.34), transparent 32rem),
@@ -341,8 +342,15 @@ h1 {
 
 .section-heading h2,
 .contact-panel h2 {
+  max-width: 100%;
   color: var(--emerald);
-  font-size: clamp(2rem, 9vw, 3.6rem);
+  font-size: clamp(2rem, 7.4vw, 3.35rem);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.section--program .section-heading h2 {
+  font-size: clamp(2rem, 6.6vw, 3.15rem);
 }
 
 .framed {
@@ -447,11 +455,16 @@ h1 {
   grid-template-columns: 1fr;
   gap: 10px;
   align-items: start;
+  min-width: 0;
   padding: 18px;
   border: 1px solid rgba(200, 159, 74, 0.28);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.66);
   box-shadow: 0 16px 36px rgba(84, 24, 39, 0.08);
+}
+
+.timeline__item > div {
+  min-width: 0;
 }
 
 .timeline__item::before {
@@ -486,12 +499,15 @@ h1 {
 .timeline h3 {
   color: var(--emerald);
   font-size: 1.24rem;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .timeline p {
   margin-top: 8px;
   color: var(--muted);
   font-size: 0.98rem;
+  overflow-wrap: break-word;
 }
 
 .location-grid,
@@ -503,17 +519,29 @@ h1 {
 .location-card {
   display: grid;
   gap: 12px;
+  min-width: 0;
   padding: 26px 22px;
+}
+
+.location-card h3,
+.location-card p,
+.venue-details {
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .venue-photo-grid {
   display: grid;
   gap: 10px;
+  min-width: 0;
+  max-width: 100%;
   margin-bottom: 4px;
 }
 
 .venue-photo {
-  aspect-ratio: 16 / 10;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
   min-height: 150px;
   margin-bottom: 0;
 }
@@ -523,8 +551,8 @@ h1 {
 }
 
 .venue-photo--secondary {
-  aspect-ratio: 16 / 9;
-  min-height: 124px;
+  aspect-ratio: 16 / 7;
+  min-height: 118px;
 }
 
 .venue-photo__label {
@@ -661,6 +689,8 @@ h1 {
 .image-slot {
   position: relative;
   overflow: hidden;
+  min-width: 0;
+  max-width: 100%;
   min-height: 180px;
   border: 1px solid rgba(200, 159, 74, 0.34);
   border-radius: var(--radius);
@@ -960,43 +990,16 @@ h1 {
     padding: 38px;
   }
 
-  .timeline {
-    width: min(100%, 760px);
-    margin: 0 auto;
-  }
-
-  .timeline::before {
-    display: block;
-    left: 118px;
-  }
-
-  .timeline__item {
-    grid-template-columns: 104px 1fr;
-    gap: 28px;
-    padding: 18px 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  .timeline__item::before {
-    display: block;
-    left: 113px;
-  }
-
-  .location-grid,
   .direction-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .venue-photo-grid {
-    grid-template-columns: 1.25fr 0.9fr;
-    align-items: start;
+  .venue-photo--main {
+    min-height: 188px;
   }
 
-  .venue-photo--main,
   .venue-photo--secondary {
-    min-height: 174px;
+    min-height: 132px;
   }
 
   .faq-grid {
@@ -1035,6 +1038,39 @@ h1 {
   }
 }
 
+@media (min-width: 900px) {
+  .timeline {
+    width: min(100%, 840px);
+    margin: 0 auto;
+  }
+
+  .timeline::before {
+    display: block;
+    left: 158px;
+  }
+
+  .timeline__item {
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 36px;
+    padding: 18px 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .timeline__item::before {
+    display: block;
+    left: 153px;
+  }
+
+  .timeline time {
+    justify-self: end;
+    max-width: 136px;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
 @media (min-width: 980px) {
   .hero {
     min-height: 88vh;
@@ -1046,6 +1082,10 @@ h1 {
 
   .section-heading {
     margin-bottom: 34px;
+  }
+
+  .location-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .gallery {
